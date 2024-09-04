@@ -135,7 +135,7 @@ print("Extraction for all years completed!")
 
 #%% 
 
-###### code to rename the forcing for the selected year starting at 000.001 #####################
+###### code to Rename the forcing for the selected year starting at 000.001 #####################
 
 
 # Regular expression pattern to match the old file names
@@ -191,7 +191,7 @@ print("Processing completed.")
 #%% ################################################ Extracting the model outputs for initial conditions ##############################################
 
 
-# Mention the parameter that you want to extract from the files
+# Mention the parameter that you want to extract from the files with 0000.000  format
 prefix = 'Subw'
 directory = 'Subw/'
 
@@ -212,9 +212,9 @@ for index, row in df_last_day_feb.iterrows():
         
         
         
-#%% ###################  For model files whose file patern is different with 000.000  format #####################################        
+#%% ###################  For model files whose file patern is different  #####################################        
 
-        ################# that was for groundwater, root water, baser and snow storage ###############################
+        ################# that was for groundwater, root water, baser and snow storage with 000.000  format ###############################
         
         
         ##### we are initialising the dataframe for the dates and file name as the format is different ######
@@ -274,11 +274,6 @@ for index, row in df_last_day_feb_changedformat.iterrows():
 ## Why am I transferring the BaserM files not the daily? Am I supposed to run with the monthly file?
 # =============================================================================
 
-
-
-dir_model = 'C:\\Users\\pokhr002\OneDrive - Universiteit Utrecht\\03Model\\05_droughts\\Baser\\'  # this was in different folder but can be in the same
-dir_output = 'C:\\Users\\pokhr002\OneDrive - Universiteit Utrecht\\03Model\\05_droughts\\BaserM\\'
-
 # List files in the output directory
 files = os.listdir(dir_model)
 # Filter filenames that start with "BaserM"
@@ -310,7 +305,7 @@ df_last_day_feb.loc[:, 'BaserM_Files'] = baserM_df['BaserM_Files'].values
 
 # Mention the parameter that you want to extract from the files
 prefix = 'BaserM'
-directory = 'Baser/'
+directory = 'BaserM/'
 
 # Iterate over each row in the DataFrame
 for index, row in baserM_df.iterrows():
@@ -320,7 +315,7 @@ for index, row in baserM_df.iterrows():
     source_file = os.path.join(dir_model, filename_pattern)
     if os.path.exists(source_file):
         # If the file exists, copy it to the destination directory
-        destination_file = os.path.join(dir_output, filename_pattern)
+        destination_file = os.path.join(dir_output,directory,filename_pattern)
         shutil.copyfile(source_file, destination_file)
         print(f"File {filename_pattern} copied to {destination_file}")
     else:
