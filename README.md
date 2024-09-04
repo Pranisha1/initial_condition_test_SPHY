@@ -1,4 +1,4 @@
-# Model Workflow for Hydrological Simulations
+# Model Workflow for Hydrological Simulations with different initial conditions
 
 This document describes the steps for running hydrological simulations with different initial conditions by configuring snow storage (SnowS), baseflow runoff (Baser), subsoil storage (Subw), and meteorological data (P, T) for a representative average year, and examining the flow conditions at various locations in the basin.
 
