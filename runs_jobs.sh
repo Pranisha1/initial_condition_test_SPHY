@@ -1,3 +1,5 @@
+# This is the code to run the jobs for the model. The link is made in such a way that this code has to be in the main folder of the SPHY model files.
+
 #!/bin/bash
 sphyroot=/scratch/depfg/pokhr002/SPHY3.0/SPHY3.0
 
